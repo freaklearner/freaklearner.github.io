@@ -77,7 +77,7 @@ body {
 .type2 {
     width: 50px;
     height: 50px;
-	margin: 10px;
+	margin: 10px 0px 10px 0px;
 	cursor:pointer;
     /*background: #ccc;*/
     /*border: 3px solid #000;*/
@@ -86,6 +86,17 @@ body {
 .temp
 {
 	border:1px solid red;
+}
+
+.btn
+{
+	background-color: rgba(0,0,0,0);
+	color: white;
+	font: Arial Black;
+	border: 2px solid white;
+	padding: 10px 25px 10px 25px;
+	border-radius: 20px;
+	margin-top:6vh;
 }
 
 </style>
@@ -100,22 +111,32 @@ body {
 </video>
 
 <div class="content" >
-	<div class="row" style="width:99.9%">
+	<div class="row" style="width:99.9%;height:100%">
 		<div class="col-sm-3">
 			<img src="Pic\logoArt.png" alt="Logo" class="responsive">
 		</div>
-		<div class="col-sm-7" style="padding-top:5%;margin-bottom:5%">
-			<center><img id="shoe" src="Pic\shoe2.png" alt="Shoe" style="width:90%;height:100%"></center>
+		<div class="col-sm-7" style="padding-top:5%">
+			<div style="width:100%;min-height:100%">
+				<center>
+					<img id="shoe" src="Pic\shoe2.png" alt="Shoe" style="width:90%;height:100%">
+				</center>
+			</div>
 		</div>
-		<div class="col-sm-2" style="padding-top:10%;">	
+		<div class="col-sm-1 offset-sm-1" style="min-height:100%;min-height:100vh;display:flex;align-items:center;padding-left:10px;align:center;">	
 			<center>
-				<div class="circleBase type2" id="military" style="background: rgb(100,94,67);" ></div>
+				<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
 				<div class="circleBase type2" id="gray"  style="background: rgb(182,182,183);" ></div>
 				<div class="circleBase type2" id="darkgray" style="background: rgb(55,65,74);"></div>
 				<div class="circleBase type2" id="blue" style="background: rgb(26,56,127);"></div>
 			</center>
 		</div>
 	</div>
+<!---	<div style="position:relative;bottom:1rem;">
+		<center>
+			<button class="btn">Order Now</button>
+		</center>
+	</div>
+--->	
 </div>
 
 <script>

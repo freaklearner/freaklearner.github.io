@@ -1,67 +1,53 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<title>ICatalog</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 
 <!-- Popper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
+	
 <style>
 * {
     box-sizing: border-box;
 }
-
 body {
-    margin: 0;
-    font-family: Arial;
-    font-size: 17px;
+	margin: 0;
+	background: #000; 
+	/*border:1px solid green;*/
 }
-
-#myVideo {
-    position: fixed;
-    min-width: 100%;
-    min-height: 100%;
+video { 
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+	background-size: cover;
+	transition: 1s opacity;
 }
-
 .content {
     position: fixed;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0);
-    color: #f1f1f1;
-    width: 100%;
+	width:100%;
 	height:100%;
-	top:0;
-	overflow-Y:auto;
+	background: rgba(0, 0, 0, 0);
+	overflow:hidden;
+	bottom:0;
     /*padding: 20px;*/
 }
-
-
-#myBtn {
-    width: 200px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-}
-
-#myBtn:hover {
-    background: #ddd;
-    color: black;
-}
-
-#shoeImage{
-	background-image: 
-}
-
 
 .responsive {
     width: 100%;
@@ -75,14 +61,13 @@ body {
 }
 
 .type2 {
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
 	margin: 10px 0px 10px 0px;
 	cursor:pointer;
     /*background: #ccc;*/
     /*border: 3px solid #000;*/
 }
-
 .temp
 {
 	border:1px solid red;
@@ -99,51 +84,65 @@ body {
 	margin-top:6vh;
 }
 
+.responsive {
+    width: 100%;
+    height: auto;
+	/*padding:10%;*/
+}
+
+.borderClass
+{
+	border:1px solid red;
+}
+
+@media screen and (max-width: 600px) { 
+  div.content{overflow-Y:scroll;} 
+}
+
 </style>
 </head>
 <body onload="setBorder();">
+	<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop> 
+		<source src="Video/22.mp4" type="video/mp4">
+	</video>
 
-<video autoplay muted loop id="myVideo">
-	<source src="Video/2.ogv" type="video/ogv">
-	<source src="Video/2.webm" type="video/webm">
-	<source src="Video/2.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
-
-<div class="content" >
-	<div class="row" style="width:99.9%;height:100%">
+	<div class="content">
+		<div class="row" style="width:99.9%;height:100%">
 		<div class="col-sm-3">
 			<img src="Pic\logoArt.png" alt="Logo" class="responsive">
 		</div>
-		<div class="col-sm-7" style="padding-top:5%">
-			<div style="width:100%;min-height:100%">
-				<center>
-					<img id="shoe" src="Pic\shoe2.png" alt="Shoe" style="width:90%;height:100%">
-				</center>
-			</div>
+		<div class="col-sm-7">
+			<center>
+					<img id="shoe" src="Pic\shoe2.png" alt="Shoe" class="responsive">
+			<center>
 		</div>
-		<div class="col-sm-1 offset-sm-1" style="min-height:100%;min-height:100vh;display:flex;align-items:center;padding-left:10px;align:center;">	
+		<div class="col-sm-1 offset-sm-1" style="min-height:75vh;display:flex;align-items:center;">	
 			<center>
 				<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
-				<div class="circleBase type2" id="gray"  style="background: rgb(182,182,183);" ></div>
-				<div class="circleBase type2" id="darkgray" style="background: rgb(55,65,74);"></div>
-				<div class="circleBase type2" id="blue" style="background: rgb(26,56,127);"></div>
+				<div class="circleBase type2 align-middle" id="gray"  style="background: rgb(182,182,183);" ></div>
+				<div class="circleBase type2 align-middle" id="darkgray" style="background: rgb(55,65,74);"></div>
+				<div class="circleBase type2 align-middle" id="blue" style="background: rgb(26,56,127);"></div>
 			</center>
 		</div>
 	</div>
-<!---	<div style="position:relative;bottom:1rem;">
-		<center>
-			<button class="btn">Order Now</button>
-		</center>
+		
+		
 	</div>
---->	
-</div>
 
+
+
+</body>
 <script>
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("myBtn");
-$(document).ready(function(){
+/*var vid = document.getElementById("bgvid");
+//var pauseButton = document.querySelector("#polina button");
 
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+    //pauseButton.innerHTML = "Paused";
+}
+*/
+$(document).ready(function(){
 	$("div#military").click(function(){
 		$("img#shoe").hide();
 		removeBorder();
@@ -179,9 +178,6 @@ $(document).ready(function(){
 		$("img#shoe").attr("src","Pic/shoe4.png");
 		
 	});
-	
-	
-	
 });
 
 function removeBorder()
@@ -197,29 +193,34 @@ function setBorder()
 {
 	document.getElementById("military").style.border="2px solid white";
 }
+
+
 /*
-function changeImage(var image)
-{
-	alert("Hello "+ image);
-	document.getElementById("shoe").src=image;
+function vidFade() {
+  vid.classList.add("stopfade");
 }
 
-function hello()
+vid.addEventListener('ended', function()
 {
-	alert("hello");
-}
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
 
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
+
+pauseButton.addEventListener("click", function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    pauseButton.innerHTML = "Pause";
   } else {
-    video.pause();
-    btn.innerHTML = "Play";
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
   }
-}
-*/
-</script>
+  */
 
-</body>
+
+
+</script>
 </html>

@@ -60,7 +60,7 @@ video {
 }
 
 .type2 {
-    width: 5vw;
+    width: 4.5vw;
     height: 9vh;
 	margin: 10px 0px 10px 0px;
 	cursor:pointer;
@@ -96,7 +96,12 @@ video {
 
 @media screen and (max-width: 600px) { 
   div.content{overflow-Y:scroll;} 
-  div.type2{1}
+  div.cont{margin-left:25%;}
+  div.type2{ float:left;margin-left:15px;width:50px;height:50px;}
+}
+@media screen and (max-device-width: 800px) 
+{
+	
 }
 
 </style>
@@ -116,7 +121,8 @@ video {
 					<img id="shoe" src="Pic\shoe2.png" alt="Shoe" class="responsive">
 			<center>
 		</div>
-		<div class="col-sm-1 offset-sm-1" style="min-height:75vh;display:flex;align-items:center;">	
+		
+		<div class="col-sm-1 offset-sm-1 cont" style="min-height:75vh;display:flex;align-items:center;">	
 			<center>
 				<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
 				<div class="circleBase type2 align-middle" id="gray"  style="background: rgb(182,182,183);" ></div>
@@ -125,12 +131,7 @@ video {
 			</center>
 		</div>
 	</div>
-		
-		
 	</div>
-
-
-
 </body>
 <script>
 /*var vid = document.getElementById("bgvid");

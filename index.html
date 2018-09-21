@@ -96,8 +96,9 @@ video {
 
 @media screen and (max-width: 600px) { 
   div.content{overflow-Y:scroll;} 
-  
-  div.type2{ float:left;margin-left:15px;width:50px;height:50px;}
+  div.type2{ float:left;margin-left:15px;width:50px;height:50px;padding-top:0px;margin-top:-10px;}
+  div.cont{align-items:baseline;height:60px;padding:0px;}
+  div.im{border:1px solid red;}
 }
 @media screen and (max-device-width: 800px) 
 {
@@ -116,13 +117,13 @@ video {
 		<div class="col-sm-3">
 			<img src="Pic\logoArt.png" alt="Logo" class="responsive">
 		</div>
-		<div class="col-sm-7" style="display:flex;align-items:center">
+		<div class="col-sm-8 im" style="display:flex;align-items:center">
 			<center>
-					<img id="shoe" src="Pic\shoe2.png" alt="Shoe" class="responsive">
+					<img id="shoe" src="Pic\2.png" alt="Shoe" class="responsive">
 			<center>
 		</div>
 		
-		<div class="col-sm-1 offset-sm-1 cont" style="min-height:75vh;display:flex;align-items:center;">	
+		<div class="col-sm-1 cont" style="min-height:75vh;display:flex;align-items:center;">	
 			<center>
 				<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
 				<div class="circleBase type2 align-middle" id="gray"  style="background: rgb(182,182,183);" ></div>
@@ -149,7 +150,7 @@ $(document).ready(function(){
 		removeBorder();
 		$(this).css("border","2px solid white")
 		$("img#shoe").fadeIn(1000);
-		$("img#shoe").attr("src","Pic/shoe2.png");
+		$("img#shoe").attr("src","Pic/2.png");
 	});
 	
 	$("div#gray").click(function(){
@@ -157,7 +158,7 @@ $(document).ready(function(){
 		removeBorder();
 		$(this).css("border","2px solid white")
 		$("img#shoe").fadeIn(1000);
-		$("img#shoe").attr("src","Pic/shoe1.png");
+		$("img#shoe").attr("src","Pic/1.png");
 		
 	});
 	
@@ -165,7 +166,7 @@ $(document).ready(function(){
 		$("img#shoe").hide();
 		removeBorder();
 		$(this).css("border","2px solid white")
-		$("img#shoe").attr("src","Pic/shoe3.png");
+		$("img#shoe").attr("src","Pic/3.png");
 		$("img#shoe").fadeIn(1000);
 		$(this).css("border","2px solid white")
 		
@@ -176,7 +177,7 @@ $(document).ready(function(){
 		removeBorder();
 		$(this).css("border","2px solid white")
 		$("img#shoe").fadeIn(1000);
-		$("img#shoe").attr("src","Pic/shoe4.png");
+		$("img#shoe").attr("src","Pic/4.png");
 		
 	});
 });

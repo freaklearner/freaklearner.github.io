@@ -73,16 +73,7 @@ video {
 	border:1px solid red;
 }
 
-.btn
-{
-	background-color: rgba(0,0,0,0);
-	color: white;
-	font: Arial Black;
-	border: 2px solid white;
-	padding: 10px 25px 10px 25px;
-	border-radius: 20px;
-	margin-top:6vh;
-}
+
 
 .colorPic
 {
@@ -109,20 +100,20 @@ img.colorPic
 
 @media screen and (max-width: 600px) { 
   div.content{overflow-Y:scroll;} 
-  div.type2{float:left;margin-left:10%;width:50px;height:50px;padding-top:0px;margin-top:-10px;display:block;margin-bottom:10px;}
+  div.type2{float:left;margin-left:10%;width:50px;height:50px;padding-top:0px;margin-top:-10px;display:block;margin-bottom:30px;}
   div.im{margin-left:40px;}
-  div.im{padding-top:0px}
+  img.shoe{margin-left:100px;}
   .colorPic{display:none}
 }
 @media only screen and (min-width: 768px) 
 {
-	div.im{margin-left:auto}
+	
 	div.im{padding-top:auto}
 	.colorPic{width:100%;height:auto}
 } 
 @media screen and (max-device-width: 800px) 
 {
-	div.im{margin-left:0}
+	
 	div.im{padding-top:0px}
 	.colorPic{width:100%;height:auto}
 }
@@ -142,35 +133,43 @@ img.colorPic
 	</video>
 
 	<div class="content">
-		<div class="row" style="width:99.9%;height:100%">
-			<div class="col-sm-3">
-				<img src="Pic\logoArt.png" alt="Logo" class="responsive">
-			</div>
-			<div class="col-sm-8 im" style="margin-left:-30px;display:flex;align-items:center;">
-				<img id="shoe" src="Pic\2.png" alt="Shoe" style="width:100%;margin-top:5vh">
-			</div>
-			
-			<div class="col-sm-1 cont" style="display:flex;align-items:center;">	
-				<center>
-					<img src="Pic/c2.png" class="colorPic c2" alt="color" style="width:70%; height:auto">
+		<div class="row" style="width:100%;height:90%;">
+	
+				<div class="col-sm-3">
+					<img src="Pic\logoArt.png" alt="Logo" class="responsive">
+				</div>
+				<div class="col-sm-8 im" style="margin-left:-30px;display:flex;align-items:center;">
+					<img id="shoe" src="Pic\2.png" alt="Shoe" style="width:100%;margin-top:5vh">
+				</div>
 				
-					<img src="Pic/c1.png" class="colorPic c1" alt="color" style="width:70%; height:auto">
-				
-					<img src="Pic/c3.png" class="colorPic c3" alt="color" style="width:70%; height:auto">
-				
-					<img src="Pic/c4.png" class="colorPic c4" alt="color" style="width:70%; height:auto">
-				</center>
-				
-				<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
-				<div class="circleBase type2 align-middle" id="gray"  style="background: rgb(182,182,183);" ></div>
-				<div class="circleBase type2 align-middle" id="darkgray" style="background: rgb(55,65,74);"></div>
-				<div class="circleBase type2 align-middle" id="blue" style="background: rgb(26,56,127);"></div>
-			</div>
-		</div class="row" style="width:99.9%;">
-			<div class="col-sm-3 offset-sm-5">
-				<img src>
-			</div>
+				<div class="col-sm-1 cont" style="display:flex;align-items:center;">	
+					<center>
+						<img src="Pic/c2.png" class="colorPic c2" alt="color" style="width:70%; height:auto">
+					
+						<img src="Pic/c1.png" class="colorPic c1" alt="color" style="width:70%; height:auto">
+					
+						<img src="Pic/c3.png" class="colorPic c3" alt="color" style="width:70%; height:auto">
+					
+						<img src="Pic/c4.png" class="colorPic c4" alt="color" style="width:70%; height:auto">
+					</center>
+					
+					<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
+					<div class="circleBase type2 align-middle" id="gray"  style="background: rgb(182,182,183);" ></div>
+					<div class="circleBase type2 align-middle" id="darkgray" style="background: rgb(55,65,74);"></div>
+					<div class="circleBase type2 align-middle" id="blue" style="background: rgb(26,56,127);"></div>
+				</div>
 		</div>
+			<div class="row">
+				<div class="col-sm-2 offset-sm-5" style="padding-top:0">
+					<img src="Pic/ordernow.png" style="width:100%;height:auto">
+				</div>
+				
+			</div>
+		
+		</div>
+		
+		
+		
 	</div>
 </body>
 <script>

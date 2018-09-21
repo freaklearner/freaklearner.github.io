@@ -64,6 +64,7 @@ video {
     height: 9vh;
 	margin-top:15px;
 	cursor:pointer;
+	display:none;
     /*background: #ccc;*/
     /*border: 3px solid #000;*/
 }
@@ -83,6 +84,12 @@ video {
 	margin-top:6vh;
 }
 
+.colorPic
+{
+	cursor: pointer;
+}
+
+
 .responsive {
     width: 100%;
     height: auto;
@@ -94,22 +101,38 @@ video {
 	border:1px solid red;
 }
 
+img.colorPic
+{
+	margin:8%;
+}
+
+
 @media screen and (max-width: 600px) { 
   div.content{overflow-Y:scroll;} 
-  div.type2{ float:left;margin-left:15px;width:50px;height:50px;padding-top:0px;margin-top:-10px;}
-  div.cont{padding-left:70px;align-items:center;padding-top:-20px;align:center}
-  div.im{margin-left:0}
+  div.type2{ float:left;margin-left:10%;width:50px;height:50px;padding-top:0px;margin-top:-10px;display:block;}
+  
+  div.im{margin:auto}
   div.im{padding-top:0px}
+  .colorPic{display:none}
 }
 @media only screen and (min-width: 768px) 
 {
-	div.im{margin-left:0}
-	div.im{padding-top:0px}
+	div.im{margin-left:auto}
+	div.im{padding-top:auto}
+	.colorPic{width:100%;height:auto}
 } 
 @media screen and (max-device-width: 800px) 
 {
 	div.im{margin-left:0}
 	div.im{padding-top:0px}
+	.colorPic{width:100%;height:auto}
+}
+
+@media screen and (max-device-width: 960px) 
+{
+	div.im{margin-left:0}
+	div.im{padding-top:0px}
+	.colorPic{width:100%;height:auto}
 }
 
 </style>
@@ -125,18 +148,24 @@ video {
 			<img src="Pic\logoArt.png" alt="Logo" class="responsive">
 		</div>
 		<div class="col-sm-8 im" style="margin-left:-30px;display:flex;align-items:center;">
-			
-					<img id="shoe" src="Pic\2.png" alt="Shoe" style="width:100%;height:auto;margin-top:5vh">
-			
+			<img id="shoe" src="Pic\2.png" alt="Shoe" style="width:100%;margin-top:5vh">
 		</div>
 		
 		<div class="col-sm-1 cont" style="display:flex;align-items:center;">	
 			<center>
-				<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
-				<div class="circleBase type2 align-middle" id="gray"  style="background: rgb(182,182,183);" ></div>
-				<div class="circleBase type2 align-middle" id="darkgray" style="background: rgb(55,65,74);"></div>
-				<div class="circleBase type2 align-middle" id="blue" style="background: rgb(26,56,127);"></div>
+				<img src="Pic/c2.png" class="colorPic c2" alt="color" style="width:70%; height:auto">
+			
+				<img src="Pic/c1.png" class="colorPic c1" alt="color" style="width:70%; height:auto">
+			
+				<img src="Pic/c3.png" class="colorPic c3" alt="color" style="width:70%; height:auto">
+			
+				<img src="Pic/c4.png" class="colorPic c4" alt="color" style="width:70%; height:auto">
 			</center>
+			
+			<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
+			<div class="circleBase type2 align-middle" id="gray"  style="background: rgb(182,182,183);" ></div>
+			<div class="circleBase type2 align-middle" id="darkgray" style="background: rgb(55,65,74);"></div>
+			<div class="circleBase type2 align-middle" id="blue" style="background: rgb(26,56,127);"></div>
 		</div>
 	</div>
 	</div>
@@ -154,38 +183,78 @@ if (window.matchMedia('(prefers-reduced-motion)').matches) {
 $(document).ready(function(){
 	$("div#military").click(function(){
 		$("img#shoe").hide();
+		$("img#shoe").attr("src","Pic/2.png");
 		removeBorder();
 		$(this).css("border","2px solid white")
 		$("img#shoe").fadeIn(1000);
-		$("img#shoe").attr("src","Pic/2.png");
+		
 	});
 	
 	$("div#gray").click(function(){
 		$("img#shoe").hide();
+		$("img#shoe").attr("src","Pic/1.png");
 		removeBorder();
 		$(this).css("border","2px solid white")
 		$("img#shoe").fadeIn(1000);
-		$("img#shoe").attr("src","Pic/1.png");
+		
 		
 	});
 	
 	$("div#darkgray").click(function(){
 		$("img#shoe").hide();
+		$("img#shoe").attr("src","Pic/3.png");
 		removeBorder();
 		$(this).css("border","2px solid white")
-		$("img#shoe").attr("src","Pic/3.png");
 		$("img#shoe").fadeIn(1000);
-		$(this).css("border","2px solid white")
 		
 	});
 	
 	$("div#blue").click(function(){
 		$("img#shoe").hide();
+		$("img#shoe").attr("src","Pic/4.png");
 		removeBorder();
 		$(this).css("border","2px solid white")
 		$("img#shoe").fadeIn(1000);
-		$("img#shoe").attr("src","Pic/4.png");
+	});
+	
+	$("img.c2").click(function(){
+		$("img#shoe").hide();
+		$("img#shoe").attr("src","Pic/2.png");
+		$("img.colorPic").css("border","0");
+		removeBorder();
+		$(this).css("border","2px solid white")
+		$("img#shoe").fadeIn(1000);
 		
+	});
+	
+	$("img.c1").click(function(){
+		$("img#shoe").hide();
+		$("img#shoe").attr("src","Pic/1.png");
+		$("img.colorPic").css("border","0");
+		removeBorder();
+		$(this).css("border","2px solid white")
+		$("img#shoe").fadeIn(1000);
+		
+		
+	});
+	
+	$("img.c3").click(function(){
+		$("img#shoe").hide();
+		$("img#shoe").attr("src","Pic/3.png");
+		$("img.colorPic").css("border","0");
+		removeBorder();
+		$(this).css("border","2px solid white")
+		$("img#shoe").fadeIn(1000);
+		
+	});
+	
+	$("img.c4").click(function(){
+		$("img#shoe").hide();
+		$("img#shoe").attr("src","Pic/4.png");
+		$("img.colorPic").css("border","0");
+		removeBorder();
+		$(this).css("border","2px solid white")
+		$("img#shoe").fadeIn(1000);
 	});
 });
 
@@ -197,6 +266,7 @@ function removeBorder()
 	document.getElementById("blue").style.border=0;
 	
 }
+
 
 function setBorder()
 {

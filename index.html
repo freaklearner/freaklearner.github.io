@@ -60,9 +60,9 @@ video {
 }
 
 .type2 {
-    width: 4.5vw;
+    width: 4vw;
     height: 9vh;
-	margin: 10px 0px 10px 0px;
+	margin-top:15px;
 	cursor:pointer;
     /*background: #ccc;*/
     /*border: 3px solid #000;*/
@@ -98,10 +98,18 @@ video {
   div.content{overflow-Y:scroll;} 
   div.type2{ float:left;margin-left:15px;width:50px;height:50px;padding-top:0px;margin-top:-10px;}
   div.cont{padding-left:70px;align-items:center;padding-top:-20px;align:center}
+  div.im{margin-left:0}
+  div.im{padding-top:0px}
 }
+@media only screen and (min-width: 768px) 
+{
+	div.im{margin-left:0}
+	div.im{padding-top:0px}
+} 
 @media screen and (max-device-width: 800px) 
 {
-	
+	div.im{margin-left:0}
+	div.im{padding-top:0px}
 }
 
 </style>
@@ -116,13 +124,13 @@ video {
 		<div class="col-sm-3">
 			<img src="Pic\logoArt.png" alt="Logo" class="responsive">
 		</div>
-		<div class="col-sm-8 im" style="display:flex;align-items:center">
-			<center>
-					<img id="shoe" src="Pic\2.png" alt="Shoe" class="responsive">
-			<center>
+		<div class="col-sm-8 im" style="margin-left:-30px;display:flex;align-items:center;">
+			
+					<img id="shoe" src="Pic\2.png" alt="Shoe" style="width:100%;height:auto;margin-top:5vh">
+			
 		</div>
 		
-		<div class="col-sm-1 cont" style="min-height:75vh;display:flex;align-items:center;">	
+		<div class="col-sm-1 cont" style="display:flex;align-items:center;">	
 			<center>
 				<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
 				<div class="circleBase type2 align-middle" id="gray"  style="background: rgb(182,182,183);" ></div>

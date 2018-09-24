@@ -112,15 +112,40 @@ div.im
 	margin-left:-30px
 }
 
+div#mobileContent
+{
+	position: fixed;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow-Y:auto;
+	display:none;
+}
+
+.dot {
+  height:50px;
+  width: 50px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  margin-left:30px;	
+ 
+}
+
 
 @media screen and (max-width: 600px) { 
   div.content{overflow-Y:scroll;} 
-  div.type2{margin-left:12%;width:50px;height:50px;padding-top:0px;margin-top:-10px;display:block;margin-bottom:30px;}
+  /*div.type2{margin-left:12%;width:50px;height:50px;padding-top:0px;margin-top:-10px;display:block;margin-bottom:30px;}
   div.im{margin-left:40px;}
   img.shoe{margin-left:100px;}
   .colorPic{display:none}
   img#orderBtn{display:none}
-  div#mobile{display:block;}
+  div#mobile{display:block;}*/
+  div.content{display:none;}
+  div#mobileContent{display:block;}
+  div#mobileContent{overflow-Y:scroll;}
+  div.type2{display:block;}
 }
 
 @media only screen and (min-width: 768px) 
@@ -138,6 +163,9 @@ div.im
 {
 	.colorPic{width:100%;height:auto}
 }
+
+
+
 
 </style>
 </head>
@@ -165,13 +193,11 @@ div.im
 					
 						<img src="Pic/c4.png" class="colorPic c4" alt="color" style="width:70%; height:auto">
 					</center>
-					
-						<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
+					<!--	<div class="circleBase type2 align-middle" id="military" style="background: rgb(100,94,67);" ></div>
 						<div class="circleBase type2 align-middle" id="gray"  style="background: rgb(182,182,183);" ></div>
 						<div class="circleBase type2 align-middle" id="darkgray" style="background: rgb(55,65,74);"></div>
 						<div class="circleBase type2 align-middle" id="blue" style="background: rgb(26,56,127);"></div>
-					
-					
+						-->
 				</div>
 		</div>
 			<div class="row">
@@ -179,8 +205,28 @@ div.im
 					<img id="orderBtn" src="Pic/ordernow.png" style="width:100%;height:auto">
 				</div>
 			</div>
-			
+		</div>
 		
+		<div id="mobileContent">
+			<div class="col-sm-12">
+				<img src="Pic\logoArt.png" alt="Logo" class="responsive">
+			</div>
+			<div class="col-sm-12">
+				<img id="shoe" src="Pic\2.png" alt="Shoe" style="width:100%;margin-top:5vh">
+			</div>
+			<div class="col-sm-12">
+				<center>
+					<span class="dot" id="military" style="background: rgb(100,94,67);"></span>
+					<span class="dot" id="gray" style="background: rgb(182,182,183);"></span>
+					<span class="dot" id="darkgray" style="background: rgb(55,65,74);"></span>
+					<span class="dot" id="blue" style="background: rgb(26,56,127);"></span>
+				</center>
+			</div>
+			<div class="col-sm-12" style="margin-top:30px;">
+				<center>
+					<img id="order" src="Pic/ordernow.png" style="width:50%;height:auto">
+				<center>
+			</div>
 		</div>
 	
 	
@@ -200,7 +246,7 @@ if (window.matchMedia('(prefers-reduced-motion)').matches) {
 }
 */
 $(document).ready(function(){
-	$("div#military").click(function(){
+	$("span#military").click(function(){
 		$("img#shoe").hide();
 		$("img#shoe").attr("src","Pic/2.png");
 		removeBorder();
@@ -209,7 +255,7 @@ $(document).ready(function(){
 		
 	});
 	
-	$("div#gray").click(function(){
+	$("span#gray").click(function(){
 		$("img#shoe").hide();
 		$("img#shoe").attr("src","Pic/1.png");
 		removeBorder();
@@ -219,7 +265,7 @@ $(document).ready(function(){
 		
 	});
 	
-	$("div#darkgray").click(function(){
+	$("span#darkgray").click(function(){
 		$("img#shoe").hide();
 		$("img#shoe").attr("src","Pic/3.png");
 		removeBorder();
@@ -228,7 +274,7 @@ $(document).ready(function(){
 		
 	});
 	
-	$("div#blue").click(function(){
+	$("span#blue").click(function(){
 		$("img#shoe").hide();
 		$("img#shoe").attr("src","Pic/4.png");
 		removeBorder();
